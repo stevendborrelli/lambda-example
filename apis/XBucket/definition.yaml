@@ -40,12 +40,16 @@ spec:
                       description: Cloud region
                       default: us-east-1
                       type: string
+                    bucketName:
+                      description: Name of the bucket
+                      type: string
                     tags:
                       description: Map of additional AWS Tags to add to all resources
                       additionalProperties:
                         type: string
                       type: object
                   required:
+                  - bucketName
                   - deletionPolicy
                   - providerConfigName
                   - region

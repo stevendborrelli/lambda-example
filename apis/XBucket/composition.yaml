@@ -62,6 +62,8 @@ spec:
           patchSetName: userTags  #crossplane.io/claim-namespace
         - fromFieldPath: spec.writeConnectionSecretToRef.namespace
           toFieldPath: spec.writeConnectionSecretToRef.namespace
+        - fromFieldPath: spec.parameters.bucketName
+          toFieldPath: metadata.name
         - type: ToCompositeFieldPath
           fromFieldPath: metadata.annotations[crossplane.io/external-name]
           toFieldPath: status.bucketName
@@ -71,7 +73,7 @@ spec:
         - type: ToCompositeFieldPath
           fromFieldPath: status.atProvider.bucketDomainName
           toFieldPath: status.bucketDomainName
-        - fromFieldPath: metadata.uid
+        - fromFieldPath: metadata.labels[crossplane.io/composite]
           toFieldPath: spec.writeConnectionSecretToRef.name
           transforms:
             - type: string
@@ -104,7 +106,6 @@ spec:
         apiVersion: s3.aws.upbound.io/v1beta1
         kind: BucketServerSideEncryptionConfiguration
         spec:
-          deletionPolicy: Delete
           forProvider:
             bucketSelector:
               matchControllerRef: true
@@ -119,5 +120,21 @@ spec:
         - type: PatchSet
           patchSetName: deletionPolicy
         - type: PatchSet
-          patchSetName: userTags 
-   
+          patchSetName: userTags
+    - name: s3-bucketVersioning
+      base:
+        apiVersion: s3.aws.upbound.io/v1beta1
+        kind: BucketVersioning
+        spec:
+          forProvider:
+            bucketSelector:
+              matchControllerRef: true
+            versioningConfiguration:
+              - status: Enabled
+      patches:
+        - type: PatchSet
+          patchSetName: providerConfigRef
+        - type: PatchSet
+          patchSetName: region
+        - type: PatchSet
+          patchSetName: deletionPolicy
