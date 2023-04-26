@@ -12,8 +12,8 @@ spec:
   parameters:
     providerConfigName: default
     region: us-east-1
-    insecureValue: us-east
-    parameterName: /team1/primaryRegion
+    insecureValue: us-east-1
+    parameterName: /team-1/primaryRegion
     tags:
       owner: team-1
 ---
@@ -26,7 +26,7 @@ spec:
   parameters:
     providerConfigName: default
     region: us-east-1
-    insecureValue: us-west
-    parameterName: /team1/backupRegion
+    insecureValue: us-west-1
+    parameterName: /team-1/backupRegion
     tags:
       owner: team-1

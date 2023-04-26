@@ -1,7 +1,7 @@
 apiVersion: example.upbound.io/v1alpha1
 kind: FunctionDeployment
 metadata:
-  name: lambda-example
+  name: ssm-paramter-lookup
   namespace: default
 spec:
   parameters:

@@ -157,6 +157,8 @@ spec:
         apiVersion: lambda.aws.upbound.io/v1beta1
         kind: Function
         metadata:
+          labels:
+            infrastructure.example.com/function-role: ssm-parameter-lookup
         spec:
           forProvider:
             packageType: Zip
@@ -174,7 +176,7 @@ spec:
           patchSetName: deletionPolicy
         - type: PatchSet
           patchSetName: userTags
-        - fromFieldPath: metadata.labels[crossplane.io/composite]
+        - fromFieldPath: metadata.name
           toFieldPath: spec.forProvider.functionName
         - fromFieldPath: spec.parameters.handler
           toFieldPath: spec.forProvider.handler
