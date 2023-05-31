@@ -36,8 +36,7 @@ spec:
     source: Secret
 EOF
 
-
+# Uptest does not currently support checking namespaces
 echo "Creating namespaces...."
 kubectl create namespace team-1 --dry-run=client -o yaml | kubectl apply -f -
-
 kubectl create namespace team-2 --dry-run=client -o yaml | kubectl apply -f -
