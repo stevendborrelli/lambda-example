@@ -304,3 +304,7 @@ aws_secret_access_key=jQplCPbh...
 ```sh
 make e2e
 ```
+
+## Questions?
+
+For any questions, thoughts and comments don't hesitate to reach out or drop by slack.crossplane.io, and say hi!
