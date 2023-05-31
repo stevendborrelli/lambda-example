@@ -14,8 +14,8 @@ PLATFORMS ?= linux_amd64
 UP_VERSION = v0.16.1
 UP_CHANNEL = stable
 UPTEST_VERSION = v0.5.0
-#UPTEST_CLAIMS = examples/ssm-parameter-lambda-deployment.yaml,examples/ssmparameters-team1.yaml,examples/ssmparameters-team2.yaml,examples/application-team1.yaml,examples/application-team2.yaml               
-UPTEST_CLAIMS = examples/ssmparameters-team1.yaml
+UPTEST_CLAIMS = examples/ssm-parameter-lambda-deployment.yaml,examples/ssmparameters-team1.yaml,examples/ssmparameters-team2.yaml,examples/application-team1.yaml,examples/application-team2.yaml               
+#UPTEST_CLAIMS = examples/ssmparameters-team1.yaml
 # ====================================================================================
 # Setup Helm
 
