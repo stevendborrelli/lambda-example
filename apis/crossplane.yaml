@@ -28,19 +28,19 @@ metadata:
       repo](https://github.com/upbound/platform-ref-lambda/) that you can copy and
       customize to meet the exact needs of your organization!
 spec:
+  skipDependencyResolution: true
   crossplane:
-    version: ">=v1.12.1-0"
+    version: ">=v1.12.1-0"  # Minimum version for family providers
   dependsOn:
-    - provider: xpkg.upbound.io/upbound/provider-aws
-      version: ">=v0.34.0"
-    # - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-ec2
-    #   version: ">=v0.35.0" 
-    # - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-iam
-    #   version: ">=v0.35.0"
-    # - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-lambda
-    #   version: ">=v0.35.0"
-    # - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-s3
-    #   version: ">=v0.35.0"
-    # - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-ssm
-    #   version: ">=v0.35.0"
-
+    # - provider: xpkg.upbound.io/upbound-release-candidates/provider-family-aws
+    #   version: ">=v0.37.0"
+    - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-ec2
+      version: ">=v0.37.0" 
+    - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-iam
+      version: ">=v0.37.0"
+    - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-lambda
+      version: ">=v0.37.0"
+    - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-s3
+      version: ">=v0.37.0"
+    - provider: xpkg.upbound.io/upbound-release-candidates/provider-aws-ssm
+      version: ">=v0.37.0"
